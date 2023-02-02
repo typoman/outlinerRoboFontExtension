@@ -49,12 +49,9 @@ def interSect(seg1, seg2):
     seg2s, seg2e = seg2
     denom = (seg2e.y - seg2s.y)*(seg1e.x - seg1s.x) - (seg2e.x - seg2s.x)*(seg1e.y - seg1s.y)
     if roundFloat(denom) == 0:
-        # print('parallel: %s' % denom)
         return None
     uanum = (seg2e.x - seg2s.x)*(seg1s.y - seg2s.y) - (seg2e.y - seg2s.y)*(seg1s.x - seg2s.x)
-    ubnum = (seg1e.x - seg1s.x)*(seg1s.y - seg2s.y) - (seg1e.y - seg1s.y)*(seg1s.x - seg2s.x)
     ua = uanum / denom
-    # ub = ubnum / denom
     x = seg1s.x + ua*(seg1e.x - seg1s.x)
     y = seg1s.y + ua*(seg1e.y - seg1s.y)
     return MathPoint(x, y)
